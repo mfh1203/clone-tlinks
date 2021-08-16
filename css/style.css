@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+header {
+  background: #376eb3;
+  min-height: 100px;
+}
+p {
+  line-height: 1.2;
+}
+
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+header p {
+  padding-top: 10px;
+  color: white;
+  font-size: 12px;
+}
+.container {
+  width: 68%;
+  margin: auto;
+  overflow: hidden;
+}
+.body-1 {
+  background-color: #e6eef3;
+}
+header #branding {
+  float: left;
+}
+header img {
+  margin-top: 10px;
+}
+header #telephone {
+  float: right;
+  margin-top: 40px;
+}
+/* showcase */
+#showcase {
+  background: url("../img/mv_bg.jpg") no-repeat center center/cover;
+}
+#showcase img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* box */
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 19rem);
+  grid-gap: 1rem;
+  padding: 1rem 0;
+  margin: auto;
+}
+.box {
+  height: 15rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #376eb3;
+  background-color: #fff;
+}
+.box .icon {
+  padding: 1.8rem 0;
+}
+
+.box p {
+  padding: 1.1rem 1.1rem 2rem;
+}
+
+.btn {
+  color: #376eb3;
+  text-align: center;
+  border: #376eb3 2px solid;
+  padding: 0.5rem 1rem;
+}
+.btn-dark {
+  color: white;
+  background-color: #376eb3;
+}
+
+.infor {
+  background-color: #fff;
+}
+.infor .container {
+  display: flex;
+}
+.infor .container .news-1 {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.5rem 0;
+}
+.infor .container .news-2 {
+  flex: 1;
+}
+
+.infor .container h1 {
+  font-size: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: #376eb3 2px dotted;
+  align-self: stretch;
+}
