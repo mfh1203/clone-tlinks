@@ -1,7 +1,10 @@
 module.exports = {
-  purge: [
-    './dist/index.htm',
-  ],
+  purge: {
+    enabled: true,
+    content: [
+        './dist/index.html'
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
