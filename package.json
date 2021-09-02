@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/style.css -o ./dist/css/main.css --watch"
+    "build": "npx tailwindcss -i ./src/style.css -o ./dist/css/main.css --watch",
+    "prod": "NODE_ENV=production postcss ./src/style.css -o ./dist/css/main.css"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "homepage": "https://github.com/mfh1203/clone-tlinks#readme",
   "dependencies": {
     "tailwindcss": "^2.2.9"
+  },
+  "devDependencies": {
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1"
   }
 }
