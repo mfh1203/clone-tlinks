@@ -5,3 +5,7 @@
 .btn {
   @apply rounded-md py-1 px-1.5 text-center border-2 border-bookmark-blue hover:bg-bookmark-blue hover:text-white;
 }
+
+.btn-big{
+  @apply rounded-lg py-8 px-10 text-center bg-bookmark-blue text-white ;
+}

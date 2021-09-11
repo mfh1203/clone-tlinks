@@ -8,9 +8,90 @@
     <title>Tlinks home page</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./img/favicon (2).ico" type="image/x-icon">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <!-- pic slider -->
+  <script>
+    var cont=0;
+    function loopSlider(){
+    var xx= setInterval(function(){
+        switch(cont)
+        {
+        case 0:{
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-purple-800");
+            $("#sButton2").addClass("bg-purple-800");
+        cont=1;
+        
+        break;
+        }
+        case 1:
+        {
+        
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-purple-800");
+            $("#sButton1").addClass("bg-purple-800");
+           
+        cont=0;
+        
+        break;
+        }
+        
+        
+        }},8000);
+
+}
+
+function reinitLoop(time){
+clearInterval(xx);
+setTimeout(loopSlider(),time);
+}
+
+
+
+function sliderButton1(){
+
+    $("#slider-2").fadeOut(400);
+    $("#slider-1").delay(400).fadeIn(400);
+    $("#sButton2").removeClass("bg-purple-800");
+    $("#sButton1").addClass("bg-purple-800");
+    reinitLoop(4000);
+    cont=0
+    
+    }
+    
+    function sliderButton2(){
+    $("#slider-1").fadeOut(400);
+    $("#slider-2").delay(400).fadeIn(400);
+    $("#sButton1").removeClass("bg-purple-800");
+    $("#sButton2").addClass("bg-purple-800");
+    reinitLoop(4000);
+    cont=1
+    
+    }
+
+    $(window).ready(function(){
+        $("#slider-2").hide();
+        $("#sButton1").addClass("bg-purple-800");
+        
+
+        loopSlider();
+     
+        
+    
+    
+    
+    
+    });
+
+  
+  </script>
+  <!-- pic slider -->
 </head>
 
-<body>
+<body>  
     <header class="bg-bookmark-blue py-5">
         <div class="container max-w-screen-lg">
             <div class=" flex justify-between flex-wrap">
@@ -34,7 +115,7 @@
                     <p class="pb-3"><i class="fas fa-inbox fa-2x"></i></p>
                     <h1 class="pb-3 text-xl font-bold">相続業務</h1>
                     <p class="text-center pb-5">相続、遺産整理手続きを丸ごとサポートいたします</p>
-                    <a href="./sozoku.html" class="btn">もっと見る。。。</a>
+                    <a href="./sozoku.html" class="btn ">もっと見る。。。</a>
                 </div>
                 <div class="flex flex-col items-center bg-white py-6 px-4 text-bookmark-blue shadow-md rounded-sm"">
                     <p class="pb-3"><i class="fas fa-house-user fa-2x"></i></p>
@@ -100,10 +181,28 @@
                         <a class="my-6 " target="_blank" href="https://www.google.com/maps?ll=35.908307,139.620137&z=18&t=m&hl=ja&gl=JP&mapclient=embed&q=%EF%BC%AD%EF%BC%B3%EF%BC%8D%EF%BC%91%EF%BC%A2%EF%BC%AC%EF%BC%A4+%E3%80%92330-0854+%E5%9F%BC%E7%8E%89%E7%9C%8C%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E5%A4%A7%E5%AE%AE%E5%8C%BA%E6%A1%9C%E6%9C%A8%E7%94%BA%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%93%EF%BC%97%EF%BC%96"><img src="./img/unnamed.jpg" alt=""></a>
                     </div>
                 </div>
-            </div>          
-            </section>
+            </div>       
+            <div class="max-w-screen-lg container py-10">
+            <div class="sliderAx h-auto">
+                <div id="slider-1" class="">
+                  <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill" style="background-image: url(./img/slidepic1.jpg)">
+                  </div>      
+                </div> 
+                <div id="slider-2" class="">
+                  <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill" style="background-image: url(./img/slidepic2.jpg)">
+                </div>
+                </div>
+                </div>
+             
+                <div  class="flex justify-between w-12 mx-auto p-2 ">
+                <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 p-2 m-2 " ></button>
+                <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2 m-2"></button>
+                </div>
+                </div>
+            </div>
+            
             <!-- infor -->
-            <section>
+            <section class="border-t-2 border-bookmark-blue">
                 <div class="container py-6 max-w-screen-lg">
                 <div class="grid grid-cols-2 md:grid-cols-7 gap-6">
                     <div class="col-span-2">
@@ -134,6 +233,6 @@
                 <h1 class="font-xs text-white">Copyright © 司法書士法人T-リンクス All Rights Reserved.</h1>
             </div>
         </footer>
-        
+        <script src="./app file/slider.js"></script>   
     </body>
 </html>
