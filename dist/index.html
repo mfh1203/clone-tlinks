@@ -9,86 +9,8 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./img/favicon (2).ico" type="image/x-icon">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <!-- pic slider -->
-  <script>
-    var cont=0;
-    function loopSlider(){
-    var xx= setInterval(function(){
-        switch(cont)
-        {
-        case 0:{
-            $("#slider-1").fadeOut(400);
-            $("#slider-2").delay(400).fadeIn(400);
-            $("#sButton1").removeClass("bg-purple-800");
-            $("#sButton2").addClass("bg-purple-800");
-        cont=1;
-        
-        break;
-        }
-        case 1:
-        {
-        
-            $("#slider-2").fadeOut(400);
-            $("#slider-1").delay(400).fadeIn(400);
-            $("#sButton2").removeClass("bg-purple-800");
-            $("#sButton1").addClass("bg-purple-800");
-           
-        cont=0;
-        
-        break;
-        }
-        
-        
-        }},8000);
-
-}
-
-function reinitLoop(time){
-clearInterval(xx);
-setTimeout(loopSlider(),time);
-}
-
-
-
-function sliderButton1(){
-
-    $("#slider-2").fadeOut(400);
-    $("#slider-1").delay(400).fadeIn(400);
-    $("#sButton2").removeClass("bg-purple-800");
-    $("#sButton1").addClass("bg-purple-800");
-    reinitLoop(4000);
-    cont=0
-    
-    }
-    
-    function sliderButton2(){
-    $("#slider-1").fadeOut(400);
-    $("#slider-2").delay(400).fadeIn(400);
-    $("#sButton1").removeClass("bg-purple-800");
-    $("#sButton2").addClass("bg-purple-800");
-    reinitLoop(4000);
-    cont=1
-    
-    }
-
-    $(window).ready(function(){
-        $("#slider-2").hide();
-        $("#sButton1").addClass("bg-purple-800");
-        
-
-        loopSlider();
-     
-        
-    
-    
-    
-    
-    });
-
-  
-  </script>
-  <!-- pic slider -->
+    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>  
@@ -182,25 +104,41 @@ function sliderButton1(){
                     </div>
                 </div>
             </div>       
-            <div class="max-w-screen-lg container py-10">
-            <div class="sliderAx h-auto">
-                <div id="slider-1" class="">
-                  <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill" style="background-image: url(./img/slidepic1.jpg)">
-                  </div>      
-                </div> 
-                <div id="slider-2" class="">
-                  <div class="bg-cover bg-center  h-96 text-white py-24 px-10 object-fill" style="background-image: url(./img/slidepic2.jpg)">
-                </div>
-                </div>
-                </div>
-             
-                <div  class="flex justify-between w-12 mx-auto p-2 ">
-                <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 p-2 m-2 " ></button>
-                <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2 m-2"></button>
-                </div>
-                </div>
-            </div>
-            
+               <!--image slider start-->
+               <div class="relative h-96 container mb-12 max-w-screen-lg">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper ">
+                            <div class="swiper-slide bg-cover bg-center w-full h-auto object-fill" style="background-image: url('./img/slidepic1.jpg')"></div>
+                            <div class="swiper-slide bg-cover bg-center w-full h-auto" style="background-image: url('./img/slidepic2.jpg')"></div>
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                     </div>
+                 </div>
+  
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
             <!-- infor -->
             <section class="border-t-2 border-bookmark-blue">
                 <div class="container py-6 max-w-screen-lg">
